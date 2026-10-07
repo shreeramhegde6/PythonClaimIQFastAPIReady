@@ -1,0 +1,97 @@
+===============================================================
+  MASTERING PYTHON - AZURE CLOUD LAB     (seat: pythvm-29)
+===============================================================
+
+YOUR PERSONAL AZURE LOGIN  (use the Azure Portal)
+-------------------------------------------------
+  Portal    : https://portal.azure.com
+  Username  : sb-mpython29-nkt2@synergificsoftware.com
+  Password  : Sb3fc38a62!1
+  Your Resource Group : tpl-mastering--mpython29-cuxz-sbx
+  Region    : South India   (always use this region)
+
+You can ONLY see/use your own Resource Group shown above.
+You CANNOT create new resource groups - always deploy INTO this one.
+
+FIRST LOGIN (one-time, ~2 minutes)
+----------------------------------
+ 1. Open https://portal.azure.com and sign in with the username/password above.
+ 2. You will see "More information required" (security setup). Pick ONE:
+      - Microsoft Authenticator app (install on phone, scan the QR code), OR
+      - "I want to set up a different method" -> Phone -> enter mobile -> SMS code.
+    Complete this one-time setup (required by company security policy).
+ 3. "Stay signed in?" -> Yes.
+
+WHAT YOU ARE ALLOWED TO DO (stay inside these or Azure blocks you)
+-----------------------------------------------------------------
+  - Region        : South India ONLY.
+  - VM / node size: SMALL only. Allowed: Standard_B1s, Standard_B1ms,
+                    Standard_B2s, Standard_B2ms, Standard_D2s_v3,
+                    Standard_D2as_v4.  Anything bigger is BLOCKED.
+  - Services      : AKS, ACR, Key Vault, VMs, Load Balancer, VNet,
+                    PostgreSQL, Azure OpenAI / AI Services, Storage.
+
+===============================================================
+  CREATE AN AKS (KUBERNETES) CLUSTER - STEP BY STEP   [verified]
+===============================================================
+IMPORTANT: there is NO cluster pre-created for you. YOU create it,
+once, in the Azure Portal. It takes ~6-8 minutes.
+
+>>> EXACTLY WHICH SIZE AND HOW MANY NODES <<<
+  - Node VM size (SKU) to pick : Standard_B2s   (2 vCPU, 4 GB RAM)
+        alternatives if needed : Standard_B2ms (2 vCPU/8GB) or Standard_D2s_v3
+        DO NOT pick anything bigger - it will be blocked / waste cost.
+  - Number of nodes            : 1   (ONE node only - set count = 1)
+        One node runs everything in this course. Do NOT add more nodes.
+  - Control-plane tier         : Free
+  - NOTE on the DEFAULT: when you choose the "Dev/Test" preset, Azure
+    PRE-FILLS a bigger default node size (e.g. a D-series). You MUST go to
+    the "Node pools" tab and CHANGE the node size to Standard_B2s and the
+    node count to 1 before creating. Do not just accept the defaults.
+
+STEPS:
+ 1. Portal search bar -> type "Kubernetes services" -> open it.
+ 2. Click  + Create  ->  "Kubernetes cluster".
+ 3. BASICS tab:
+      Subscription  : (the only one shown)
+      Resource group: tpl-mastering--mpython29-cuxz-sbx      <-- your EXISTING RG, do NOT create one
+      Preset config : Dev/Test
+      Cluster name  : myaks
+      Region        : South India          <-- must match your RG
+      Availability zones : None
+      AKS pricing tier   : Free
+      Kubernetes version : (leave default)
+ 4. NODE POOLS tab -> click the "agentpool" row:
+      Node size    : Choose size -> Standard_B2s      (change the default!)
+      Scale method : Manual
+      Node count   : 1
+      -> click Update
+ 5. Leave NETWORKING / INTEGRATIONS / ADVANCED at their DEFAULTS.
+      (This creates a basic cluster: 1 system node pool "agentpool", 1 node,
+       a Standard load balancer and a VNet - all made automatically for you.)
+ 6. Review + create  ->  Create.  Wait until "Your deployment is complete".
+
+CONNECT & TEST (use the portal Cloud Shell - the  >_  icon at top, pick Bash):
+ 7. If it asks to create storage the first time, click Create.
+ 8. Run (copy exactly):
+      az aks get-credentials --resource-group tpl-mastering--mpython29-cuxz-sbx --name myaks --overwrite-existing
+      kubectl get nodes
+    -> you should see 1 node, STATUS = Ready.
+ 9. Deploy a test app:
+      kubectl create deployment nginx --image=nginx
+      kubectl get pods
+    -> the nginx pod should become Running.
+
+DELETE WHEN FINISHED (optional, frees resources):
+      az aks delete --resource-group tpl-mastering--mpython29-cuxz-sbx --name myaks --yes
+
+TROUBLESHOOTING
+---------------
+  - "RequestDisallowedByPolicy" or size/region not allowed:
+       you picked a blocked region or VM size -> use South India + Standard_B2s.
+  - "AuthorizationFailed" / cannot create resource group:
+       expected - always deploy INTO your existing RG (tpl-mastering--mpython29-cuxz-sbx).
+  - Lab access window: TODAY ONLY, 08:30 - 13:00 IST.
+
+Need help? Contact your trainer.
+===============================================================
