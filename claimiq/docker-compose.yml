@@ -15,7 +15,7 @@ services:
     build: .
     env_file: .env
     environment:
-      DATABASE_URL: postgresql+psycopg://claimiq:claimiq@db:5432/claimiq
+      DATABASE_URL: <your url>
     ports:
       - "8000:8000"
     volumes:
