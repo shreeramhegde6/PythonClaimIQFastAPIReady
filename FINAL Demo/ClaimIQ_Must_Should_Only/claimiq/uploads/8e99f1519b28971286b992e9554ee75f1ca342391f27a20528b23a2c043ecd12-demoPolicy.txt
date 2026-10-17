@@ -1,0 +1,86 @@
+CLAIMIQ DEMO INSURANCE POLICY
+
+Policy Name: SecureDrive Comprehensive Motor Insurance
+Policy Number: DEMO-MOTOR-2026-001
+Policy Type: Comprehensive Motor Insurance
+Region: India
+
+1. POLICY OVERVIEW
+
+SecureDrive Comprehensive Motor Insurance provides financial protection for the insured vehicle against accidental damage, theft, fire, and certain natural disasters.
+
+The policy is intended for demonstration and testing purposes only.
+
+2. ACCIDENTAL DAMAGE
+
+The policy covers repair costs resulting from accidental damage to the insured vehicle.
+
+The maximum accidental damage coverage is INR 800,000 per claim.
+
+The policyholder must report the accident within 7 calendar days from the date of the incident.
+
+3. THEFT COVERAGE
+
+If the insured vehicle is stolen and cannot be recovered, the policyholder may submit a theft claim.
+
+The maximum theft coverage is INR 750,000.
+
+The policyholder must provide a copy of the police complaint or FIR when submitting a theft claim.
+
+The theft must be reported to the insurer within 48 hours after discovery.
+
+4. FIRE DAMAGE
+
+Damage caused by fire, explosion, or lightning is covered up to INR 600,000 per claim.
+
+Damage caused intentionally by the policyholder is not covered.
+
+5. NATURAL DISASTER COVERAGE
+
+The policy covers vehicle damage caused by:
+
+Flood
+Cyclone
+Earthquake
+Landslide
+Storm
+
+Natural disaster coverage is limited to INR 500,000 per claim.
+
+6. DEDUCTIBLE
+
+A standard deductible of INR 5,000 applies to every approved accidental damage claim.
+
+For natural disaster claims, the deductible is INR 10,000.
+
+7. EXCLUSIONS
+
+The policy does not cover:
+
+Damage caused while driving under the influence of alcohol or illegal drugs.
+
+Damage caused while the vehicle is being used for illegal activities.
+
+Normal wear and tear.
+
+Mechanical failure that is not caused by a covered accident.
+
+Damage caused intentionally by the policyholder.
+
+Racing or competitive driving.
+
+8. CLAIM DOCUMENTS
+
+For an accidental damage claim, the policyholder should provide:
+
+Completed claim form.
+Vehicle registration certificate.
+Driving licence of the driver.
+Photographs of the damaged vehicle.
+Repair estimate from an authorized service center.
+
+For theft claims, a police complaint or FIR must also be provided.
+
+9. CLAIM PROCESSING
+
+After all required 
